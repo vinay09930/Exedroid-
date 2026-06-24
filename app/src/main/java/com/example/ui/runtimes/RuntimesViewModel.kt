@@ -3,7 +3,7 @@ package com.example.ui.runtimes
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.example.core.managers.RuntimeManager
+import com.example.core.managers.runtimes.RuntimeManager
 import com.example.domain.models.RuntimeEnvironment
 import com.example.domain.models.RuntimeType
 import kotlinx.coroutines.flow.MutableStateFlow

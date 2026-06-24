@@ -6,32 +6,14 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 class RuntimeInstaller {
-    fun installRuntime(type: RuntimeType): Flow<String> = flow {
-        emit("Preparing installation for ${type.name}...")
+    fun installRuntime(type: RuntimeType, version: String): Flow<String> = flow {
+        emit("Preparing installation for ${type.name} version $version...")
         delay(500)
-        when (type) {
-            RuntimeType.WINDOWS_WINE -> {
-                emit("Setting up Wine integration layer...")
-                delay(500)
-                emit("Configuring API translation layer...")
-                delay(500)
-                emit("Initializing Dependency manager...")
-            }
-            RuntimeType.LINUX_USERSPACE -> {
-                emit("Creating Linux userspace environment...")
-                delay(500)
-                emit("Integrating Package manager...")
-                delay(500)
-                emit("Setting up Dependency installer...")
-            }
-            RuntimeType.MACOS_EXPERIMENTAL -> {
-                emit("Initializing Experimental compatibility framework...")
-                delay(500)
-                emit("Configuring Framework detection module...")
-                delay(500)
-                emit("Setting up Compatibility reporting...")
-            }
-        }
+        emit("Downloading runtime binaries...")
+        delay(1000)
+        emit("Extracting files to secure storage...")
+        delay(1000)
+        emit("Verifying checksums and signatures...")
         delay(500)
         emit("Installation completed for ${type.name}.")
     }
